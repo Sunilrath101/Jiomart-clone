@@ -1,0 +1,37 @@
+.container {
+  border: 1px solid red;
+  background-color: rgba(21, 27, 57, 0.08);
+  width: 100%;
+  height: 452px;
+  padding-top: 52px;
+  margin-top: 20px;
+}
+.containerIn {
+  border: 1px solid red;
+  width: 80%;
+  height: 90%;
+  margin: auto;
+  padding: 0 50px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: flex-start;
+  padding-top: 50px;
+}
+.list {
+  display: flex;
+  flex-direction: column;
+}
+.list > .listItem:first-child {
+  font-size: 16px;
+  font-weight: 400;
+}
+.listItem {
+  text-decoration: none;
+  cursor: pointer;
+  font-size: 12px;
+}
+.listItem:hover {
+  text-decoration: none;
+  cursor: pointer;
+}
