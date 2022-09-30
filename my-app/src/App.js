@@ -1,6 +1,6 @@
 import Navbar from "./Components/Navbar";
 import Footer from "./Components/Footer";
-import Men from "./Home/men.jsx";
+import Men from "./Home/Men.jsx";
 
 function App() {
   return (
