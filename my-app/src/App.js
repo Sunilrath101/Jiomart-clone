@@ -6,9 +6,10 @@ import Men from "./Home/Men";
 function App() {
   return (
     <div className="App">
-      <Navbar />
-      <Home />
-      <Footer />
+      {/* <Navbar /> */}
+      {/* <Home /> */}
+      {/* <Footer /> */}
+      <Men />
     </div>
   );
 }
