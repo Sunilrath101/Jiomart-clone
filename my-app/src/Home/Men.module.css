@@ -1,14 +1,15 @@
 .containerMain {
-  border: 1px solid red;
+  /* border: 1px solid red; */
   width: 100%;
   box-sizing: border-box;
-  height: 100vh;
+  height: 2200px;
   padding: 1rem;
   padding-top: 3rem;
   background-color: #f3f3f3;
+  display: flex;
 }
 .container {
-  border: 1px solid royalblue;
+  /* border: 1px solid royalblue; */
   display: flex;
   flex-direction: row;
   width: 100%;
@@ -55,7 +56,7 @@
 }
 .main {
   width: 75%;
-  border: 1px solid sandybrown;
+  /* border: 1px solid sandybrown; */
   height: 100%;
 }
 .slidebarselction {
@@ -102,4 +103,22 @@
   height: auto;
   background-color: #ffff;
   padding: 20px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+}
+.zoom {
+  /* padding: 50px; */
+  /* background-color: green; */
+  transition: transform 0.2s;
+  width: 180px;
+  height: 226px;
+  margin: 0 auto;
+  cursor: pointer;
+}
+
+.zoom:hover {
+  -ms-transform: scale(1.5); /* IE 9 */
+  -webkit-transform: scale(1.5); /* Safari 3-8 */
+  transform: scale(1.1);
 }

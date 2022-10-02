@@ -12,8 +12,10 @@ import {
   InputRightElement,
   Image,
   Button,
+  Badge,
 } from "@chakra-ui/react";
 import React from "react";
+import { useState } from "react";
 import styles from "./Men.module.css";
 const menData = [
   {
@@ -177,6 +179,9 @@ const menData = [
   },
 ];
 const Men = () => {
+  const [data, setData] = useState(menData);
+  const [cart, setCart] = useState([]);
+  console.log("cart:", cart);
   return (
     <div className={styles.containerMain}>
       <div className={styles.container}>
@@ -595,17 +600,90 @@ const Men = () => {
             </div>
             <div>
               Sort by:
-              <Button p={1}>Popularity</Button>
-              <Button p={1}>High to Low</Button>
-              <Button p={1}>Low to High</Button>
-              <Button p={1}>Discount</Button>
-              <Button p={1}>All Product</Button>
+              <Button
+                p={1}
+                onClick={() => {
+                  setData(menData);
+                }}
+              >
+                Popularity
+              </Button>
+              <Button
+                p={1}
+                onClick={() => {
+                  let newData = [...menData]
+                    .map((el) => el)
+                    .sort((a, b) => a.price - b.price);
+                  setData(newData);
+                }}
+              >
+                High to Low
+              </Button>
+              <Button
+                p={1}
+                onClick={() => {
+                  let newData = [...menData]
+                    .map((el) => el)
+                    .sort((a, b) => b.price - a.price);
+                  setData(newData);
+                }}
+              >
+                Low to High
+              </Button>
+              <Button
+                p={1}
+                onClick={() => {
+                  setData(menData);
+                }}
+              >
+                Discount
+              </Button>
+              <Button
+                p={1}
+                onClick={() => {
+                  setData(menData);
+                }}
+              >
+                All Product
+              </Button>
             </div>
           </div>
           <div className={styles.main3}>
-            {
-              // menData.map((el)=>)
-            }
+            {data.map((el) => (
+              <Box
+                maxW="sm"
+                borderWidth="1px"
+                borderRadius="lg"
+                overflow="hidden"
+                display="flex"
+                flexDirection="column"
+                justifyContent="space-around"
+                py={2}
+                key={el.id}
+                onClick={() => setCart([...cart, el])}
+              >
+                <Image src={el.img} alt={"img"} className={styles.zoom} />
+
+                <Box p="6">
+                  <Box
+                    mt="1"
+                    fontWeight="semibold"
+                    as="h4"
+                    lineHeight="tight"
+                    noOfLines={1}
+                  >
+                    {el.title}
+                  </Box>
+
+                  <Box>
+                    ₹{el.price}
+                    <Box as="span" color="gray.600" fontSize="sm" px={5}>
+                      <s>₹{el.mrp}</s>
+                    </Box>
+                  </Box>
+                </Box>
+              </Box>
+            ))}
           </div>
         </div>
       </div>
