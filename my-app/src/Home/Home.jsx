@@ -169,8 +169,8 @@ const Home = () => {
           src="https://www.jiomart.com/images/cms/aw_rbslider/slides/1624041574_web_static.jpg"
         />
       </Box>
-      <Box>men wear producrts</Box>
-      <Box>men wear producrts</Box>
+      {/* <Box>men wear producrts</Box>
+      <Box>men wear producrts</Box> */}
       <Box p={10}>
         <Heading size="md" pb={4}>
           Shop from Top Categories
