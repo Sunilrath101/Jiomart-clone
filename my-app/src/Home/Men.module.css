@@ -1,35 +1,40 @@
 .containerMain {
-  background-color: rgb(222, 232, 110);
+  border: 1px solid red;
   width: 100%;
   box-sizing: border-box;
   height: 100vh;
   padding: 1rem;
   padding-top: 3rem;
+  background-color: #f3f3f3;
 }
 .container {
-  background-color: royalblue;
+  border: 1px solid royalblue;
   display: flex;
   flex-direction: row;
   width: 100%;
   box-sizing: border-box;
   justify-content: space-between;
   height: 100vh;
+  background-color: #ffff;
+  background-color: #f3f3f3;
 }
 .slide {
   width: 20%;
-  background-color: aqua;
+  border: 1px solid #ccc;
   height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
+  background-color: #f3f3f3;
 }
 .slide1 {
   width: 100%;
-  height: 325px;
+  height: 600px;
   overflow-y: scroll;
+  background-color: #ffff;
 }
 .force-overflow {
-  min-height: 450px;
+  min-height: 600px;
 }
 
 .slide1::-webkit-scrollbar-track {
@@ -50,10 +55,51 @@
 }
 .main {
   width: 75%;
-  background-color: sandybrown;
+  border: 1px solid sandybrown;
   height: 100%;
 }
 .slidebarselction {
   cursor: pointer;
   transition: transform 0.5s;
+}
+.slide2 {
+  margin-top: 50px;
+}
+.slide2_1 {
+  display: flex;
+  column-gap: 5px;
+  padding-left: 5px;
+  background-color: #ffff;
+}
+.slide2_1 > p {
+  font-size: small;
+}
+.slide3 {
+  width: 100%;
+  height: 300px;
+  background-color: #ffff;
+}
+.main1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 240px;
+}
+.main2 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+}
+.main2 > div:nth-child(2) {
+  display: flex;
+  justify-content: space-around;
+  column-gap: 5px;
+  align-items: center;
+}
+.main3 {
+  width: 100%;
+  height: auto;
+  background-color: #ffff;
+  padding: 20px;
 }
