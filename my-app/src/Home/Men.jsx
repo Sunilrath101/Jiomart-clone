@@ -15,8 +15,9 @@ import {
   Badge,
 } from "@chakra-ui/react";
 import React from "react";
-import { useState } from "react";
+import { useState, useContext } from "react";
 import styles from "./Men.module.css";
+import { CarrtContext } from "../Context/CartContext";
 const menData = [
   {
     id: 1,
@@ -24,6 +25,7 @@ const menData = [
     title: "Svaar Comfortable Black Slippers for Men",
     mrp: 399.0,
     price: 99.0,
+    quantity: 1,
   },
   {
     id: 2,
@@ -31,6 +33,7 @@ const menData = [
     title: "Fastdry Active Training Jacket",
     mrp: 999.0,
     price: 549.0,
+    quantity: 1,
   },
   {
     id: 3,
@@ -39,6 +42,7 @@ const menData = [
     title: "HOTSTYLE Black Casual Shoe For Mens",
     mrp: 499.0,
     price: 274.0,
+    quantity: 1,
   },
   {
     id: 4,
@@ -47,6 +51,7 @@ const menData = [
     title: "Richale New Cross White Slider",
     mrp: 1499.0,
     price: 179.0,
+    quantity: 1,
   },
   {
     id: 5,
@@ -55,6 +60,7 @@ const menData = [
     title: "Textured Slim Fit 2-Piece Suit Set",
     mrp: 4999.0,
     price: 2149.0,
+    quantity: 1,
   },
   {
     id: 6,
@@ -63,6 +69,7 @@ const menData = [
     title: "Birde Men's Green Sports Shoes",
     mrp: 499.0,
     price: 199.0,
+    quantity: 1,
   },
   {
     id: 7,
@@ -71,6 +78,7 @@ const menData = [
     title: "Sleeveless Hoodie with Split Kangaroo Pockets",
     mrp: 999.0,
     price: 429.0,
+    quantity: 1,
   },
   {
     id: 8,
@@ -79,6 +87,7 @@ const menData = [
     title: "Smartees Men Color Blocked Grey Single T-shirt",
     mrp: 999.0,
     price: 207.0,
+    quantity: 1,
   },
   {
     id: 9,
@@ -87,6 +96,7 @@ const menData = [
     title: "Pack of 3 Handkerchiefs",
     mrp: 129.0,
     price: 116.0,
+    quantity: 1,
   },
   {
     id: 10,
@@ -95,6 +105,7 @@ const menData = [
     title: "Aadi Men's Grey Synthetic Leather Outdoor Casual Sandal",
     mrp: 1999.0,
     price: 269.0,
+    quantity: 1,
   },
   {
     id: 11,
@@ -103,6 +114,7 @@ const menData = [
     title: "Pack of 2 Trunks",
     mrp: 369.0,
     price: 369.0,
+    quantity: 1,
   },
   {
     id: 12,
@@ -111,6 +123,7 @@ const menData = [
     title: "K-FOOTLANCE SLIPON SLIPPERS",
     mrp: 999.0,
     price: 199.0,
+    quantity: 1,
   },
   {
     id: 13,
@@ -119,6 +132,7 @@ const menData = [
     title: "Striped Crew-Neck Pullover",
     mrp: 1199.0,
     price: 515.0,
+    quantity: 1,
   },
   {
     id: 14,
@@ -127,6 +141,7 @@ const menData = [
     title: "Gespo Men's Black Solid Cotton Blend Half Sleeve Shirt",
     mrp: 899.0,
     price: 235.0,
+    quantity: 1,
   },
   {
     id: 15,
@@ -136,6 +151,7 @@ const menData = [
       "Smartees Men Multicolor Solid Cotton Blend Single Round Neck T-shirt",
     mrp: 1599.0,
     price: 449.0,
+    quantity: 1,
   },
   {
     id: 16,
@@ -144,6 +160,7 @@ const menData = [
     title: "Textured Crew-Neck Pullover",
     mrp: 999.0,
     price: 429.0,
+    quantity: 1,
   },
   {
     id: 17,
@@ -152,6 +169,7 @@ const menData = [
     title: "Shopyholik Men Black Solid Lycra Blend Track Pant",
     mrp: 999.0,
     price: 275.0,
+    quantity: 1,
   },
   {
     id: 18,
@@ -160,6 +178,7 @@ const menData = [
     title: "Pack of 3 Handkerchiefs",
     mrp: 129.0,
     price: 116.0,
+    quantity: 1,
   },
   {
     id: 19,
@@ -168,6 +187,7 @@ const menData = [
     title: "Fastdry Active Training Jacket",
     mrp: 999.0,
     price: 549.0,
+    quantity: 1,
   },
   {
     id: 20,
@@ -176,12 +196,14 @@ const menData = [
     title: "INCHH Men's Cotton Round Neck Colour Block Half Sleeve T-Shirt",
     mrp: 999.0,
     price: 237.0,
+    quantity: 1,
   },
 ];
 const Men = () => {
   const [data, setData] = useState(menData);
-  const [cart, setCart] = useState([]);
-  console.log("cart:", cart);
+  // const [cart, setCart] = useState([]);
+  const { toggle } = useContext(CarrtContext);
+  // console.log("cart:", cart);
   return (
     <div className={styles.containerMain}>
       <div className={styles.container}>
@@ -660,7 +682,7 @@ const Men = () => {
                 justifyContent="space-around"
                 py={2}
                 key={el.id}
-                onClick={() => setCart([...cart, el])}
+                onClick={() => toggle(el)}
               >
                 <Image src={el.img} alt={"img"} className={styles.zoom} />
 

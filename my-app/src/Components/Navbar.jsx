@@ -30,10 +30,13 @@ import { HamburgerIcon } from "@chakra-ui/icons";
 import React from "react";
 import { FaUserCircle, FaShoppingCart, FaListUl } from "react-icons/fa";
 import { Link, NavLink } from "react-router-dom";
-
+import { useContext } from "react";
+import { IsAuthContext } from "../Context/AuthContext";
 const Navbar = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const btnRef = React.useRef();
+  const { isAuth } = useContext(IsAuthContext);
+  console.log("isAuth:", isAuth);
 
   const clickHandler = () => {};
   return (
@@ -89,7 +92,7 @@ const Navbar = () => {
               >
                 <Icon as={FaUserCircle} color="white" boxSize={6} />
                 <Text color="white" fontSize="14px" w="140px">
-                  Sunil Rathore
+                  {isAuth ? " Sunil Rathore" : "Login/Signin"}
                 </Text>
               </Box>
             </Link>
@@ -367,7 +370,7 @@ const Navbar = () => {
               <Box display="flex" gap={4}>
                 <Icon as={FaUserCircle} color="white" boxSize={6} />
                 <Text color="white" fontSize="14px" w="140px">
-                  Hello, Sunil Rathore
+                  Hello, {isAuth ? " Sunil Rathore" : "Login/Signin"}
                 </Text>
               </Box>
             </Link>
